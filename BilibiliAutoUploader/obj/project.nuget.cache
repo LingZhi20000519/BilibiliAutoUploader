@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kNkP8C3Uw3s=",
+  "success": true,
+  "projectFilePath": "D:\\Github\\BilibiliAutoUploader\\BilibiliAutoUploader\\BilibiliAutoUploader.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\selenium.webdriver\\4.34.0\\selenium.webdriver.4.34.0.nupkg.sha512"
+  ],
+  "logs": []
+}
