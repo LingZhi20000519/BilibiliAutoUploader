@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BilibiliAutoUploader")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d0de8925ce984b6a3b0aac4464fc82ebc9d3018")]
 [assembly: System.Reflection.AssemblyProductAttribute("BilibiliAutoUploader")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BilibiliAutoUploader")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

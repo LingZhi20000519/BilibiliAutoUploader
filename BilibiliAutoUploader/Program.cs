@@ -86,8 +86,8 @@ namespace BilibiliAutoUploader
         {
             string videoFolderPath = @"D:\File\米哈喵呀\视频\尚未发布\";
             string[] videoFilePaths = Directory.GetFiles(videoFolderPath, "*.mp4", SearchOption.TopDirectoryOnly);
-            DateTime startDate = DateTime.Today.AddDays(1);
-            DateTime startDateTime = new DateTime(startDate.Year, startDate.Month, startDate.Day, 8, 0, 0);
+            DateTime startDate = DateTime.Today;
+            DateTime startDateTime = new DateTime(startDate.Year, startDate.Month, startDate.Day, 19, 0, 0);
 
             List<BilibiliUploadVideoClass> bilibiliUploadVideoClassList = new List<BilibiliUploadVideoClass>();
 
@@ -95,20 +95,20 @@ namespace BilibiliAutoUploader
             {
                 // 例如 @"D:\File\米哈喵呀\视频\尚未发布\鸣潮\秧秧美图_10_20250705_142840.mp4"; 取得最后一个'\'前，第一个'_'后的秧秧美图作为视频标题
                 string videoName = videoFilePath.Substring(videoFilePath.LastIndexOf('\\') + 1).Substring(0, videoFilePath.Substring(videoFilePath.LastIndexOf('\\') + 1).IndexOf('_'));
-                videoName = videoName +"(" +startDateTime.ToString("yyyyMMdd") + ")";
+                videoName = videoName + "(" + startDateTime.ToString("yyyyMMdd") + ")" + startDateTime.Hour.ToString();
 
                 BilibiliUploadVideoClass bilibiliUploadVideoClass = new BilibiliUploadVideoClass();
                 bilibiliUploadVideoClass.VideoName = videoName;
                 bilibiliUploadVideoClass.VideoFilePath = videoFilePath;
                 bilibiliUploadVideoClass.VideoCategory = "游戏";
-                bilibiliUploadVideoClass.VideoTag = "明日方舟;AI绘图;二次元;美女";
-                bilibiliUploadVideoClass.VideoSpecialTag = "明日方舟创作者应援计划";
+                bilibiliUploadVideoClass.VideoTag = "鸣潮;AI绘图;二次元;美女";
+                bilibiliUploadVideoClass.VideoSpecialTag = "鸣潮2.5版本二创";
                 bilibiliUploadVideoClass.VideoPublishTime = startDateTime;
-                bilibiliUploadVideoClass.VideoCollection = "明日方舟";
+                bilibiliUploadVideoClass.VideoCollection = "鸣潮";
 
                 bilibiliUploadVideoClassList.Add(bilibiliUploadVideoClass);
 
-                startDateTime = startDateTime.AddDays(1);
+                startDateTime = startDateTime.AddDays(5);
             }
 
             // 序列化并保存Cookies到文件
@@ -224,8 +224,10 @@ namespace BilibiliAutoUploader
                     // 输入合集
                     IWebElement collectionPick = driver.FindElement(By.CssSelector("div.season-enter"));
                     collectionPick.Click();
+                    //Thread.Sleep(500);
                     IWebElement collectionInput = driver.FindElement(By.XPath($"//p[contains(@class, 'season-item-title') and text()='{bilibiliUploadVideoClass.VideoCollection}']/.."));
-                    collectionInput.Click();
+                    ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click();", collectionInput);
+                    //collectionInput.Click();
 
                     // 点击投稿
                     IWebElement submitButton = driver.FindElement(By.CssSelector("span.submit-add"));

@@ -18,3 +18,4 @@ D:\Github\BilibiliAutoUploader\BilibiliAutoUploader\bin\Debug\net8.0\selenium-ma
 D:\Github\BilibiliAutoUploader\BilibiliAutoUploader\bin\Debug\net8.0\WebDriver.dll
 D:\Github\BilibiliAutoUploader\BilibiliAutoUploader\obj\Debug\net8.0\BilibiliAutoUploader.csproj.AssemblyReference.cache
 D:\Github\BilibiliAutoUploader\BilibiliAutoUploader\obj\Debug\net8.0\Bilibili.54DE095E.Up2Date
+D:\Github\BilibiliAutoUploader\BilibiliAutoUploader\obj\Debug\net8.0\BilibiliAutoUploader.sourcelink.json
